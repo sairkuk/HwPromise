@@ -17,41 +17,10 @@ describe('Variant first', () => {
   }
 
   it('Form without Recipients', paramTest ({testData: 'Form without Recipients', expectedResult: 'Form without Recipients'}))
+  it('Form without Subject', paramTest ({testData: 'Form without Subject', expectedResult: 'Form without Subject'}))
+  it('Form without Message', paramTest ({testData: 'Form without Message', expectedResult: 'Form without Message'})) 
 })
 
-describe('Subject', () => {
-  const paramTest = ({ testData, expectedResult}) => 
-function (){
-  cy.visit('https://sanitarskyi-ngx-admin.herokuapp.com/');
-  cy.get('[alt="Material Dark Theme"]').click();
-  cy.get('.menu-icon.ng-tns-c141-9.ng-star-inserted').click();
-  cy.get('.menu-title.ng-tns-c141-11').click();
-
-  cy.log('Form without labels - Subject ');
-  cy.get('[placeholder="Subject"]').type(testData);
-  cy.get('[placeholder="Subject"]').should("contain.value",expectedResult )
-
-}
-
-it('Form without Subject', paramTest ({testData: 'Form without Subject', expectedResult: 'Form without Subject'}))
-})
-
-describe('Message', () => {
-  const paramTest = ({ testData, expectedResult}) => 
-function (){
-  cy.visit('https://sanitarskyi-ngx-admin.herokuapp.com/');
-  cy.get('[alt="Material Dark Theme"]').click();
-  cy.get('.menu-icon.ng-tns-c141-9.ng-star-inserted').click();
-  cy.get('.menu-title.ng-tns-c141-11').click();
-
-  cy.log('Form without labels - Message');
-  cy.get('[placeholder="Message"]').type(testData);
-  cy.get('[placeholder="Message"]').should("contain.value",expectedResult )
-
-}
-
-it('Form without Message', paramTest ({testData: 'Form without Message', expectedResult: 'Form without Message'})) 
-})
 })
 describe('Variant second', () => {
   describe('Method 2', () => {
